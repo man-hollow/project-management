@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/firestore";
 import 'firebase/auth';
 import 'firebase/storage';
@@ -23,4 +23,4 @@ const projectStorage=firebase.storage();
 //timestamp
 const timestamp = firebase.firestore.Timestamp
 
-export {projectAuth, projectFirestore, projectStorage, timestamp}
+export { projectFirestore, projectAuth, projectStorage, timestamp}

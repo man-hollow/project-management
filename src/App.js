@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router,Route, Switch, Redirect} from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
 
 import Dashboard from './pages/dashboard/Dashboard';
 import Create from './pages/create/Create';
@@ -9,33 +10,43 @@ import Signup from './pages/signup/Signup';
 import Project from './pages/project/Project';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import OnlineUsers from './components/OnlineUsers';
 
 export default function App() {
+  const {user, authIsReady} = useAuthContext()
   return (
     <div className='App'>
+      {authIsReady && (
       <Router>
-        <Sidebar />
+        {user && <Sidebar />}
         <div className='container'>
           <Navbar />
           <Switch>
             <Route exact path='/'>
-              <Dashboard />
+              {!user && <Redirect to='/login'/> }
+              { user && <Dashboard />}
             </Route>
             <Route path='/create'>
-              <Create />
+              {!user && <Redirect to='/login'/> }
+              {user && <Create />}
             </Route> 
             <Route path='/login'>
-              <Login />
+              {user && <Redirect to='/' />}
+              {!user && <Login />}
             </Route>
             <Route path='/signup'>
-              <Signup />
+            {user && <Redirect to='/'/>}
+              {!user && <Signup />}
             </Route>
             <Route path='/project:id'>
-              <Project />
+              {!user && <Redirect to='/login'/> }
+              {user &&<Project />}
             </Route>
           </Switch>
         </div>
+        {user && <OnlineUsers />}
       </Router>
+      )}
     </div>
   )
 }
