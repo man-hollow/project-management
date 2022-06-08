@@ -38,10 +38,10 @@ export default function App() {
             {user && <Redirect to='/'/>}
               {!user && <Signup />}
             </Route>
-            <Route path='/project:id'>
-              {!user && <Redirect to='/login'/> }
-              {user &&<Project />}
-            </Route>
+            <Route path="/projects/:id">
+                {!user && <Redirect to="/login" />}
+                {user && <Project />}
+              </Route>
           </Switch>
         </div>
         {user && <OnlineUsers />}

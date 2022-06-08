@@ -69,7 +69,7 @@ export default function Create() {
     const project={
       name,
       details,
-      categories:category.value,
+      category:category.value,
       dueDate:timestamp.fromDate(new Date(dueDate)),
       comments:[],
       createdBy,
