@@ -82,6 +82,7 @@ export default function Create() {
   }
   return (
     <div className='create-form'>
+      <div className='row'>
       <h2 className='page-title'>Create a new Project</h2>
       <form onSubmit={handleSubmit}>
       <label>
@@ -124,6 +125,7 @@ export default function Create() {
 
         {formError && <p className='error'>{formError}</p>}
       </form>
+      </div>
     </div>
   )
 }

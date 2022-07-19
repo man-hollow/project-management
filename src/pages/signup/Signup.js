@@ -19,7 +19,6 @@ export default function Signup() {
   const handleFileChange=(e)=>{
     setThumbnail(null);
     let selected =e.target.files[0];
-    console.log(selected);
 
     if(!selected){
       setThumbnailError('Please select a file');
@@ -35,7 +34,6 @@ export default function Signup() {
     }
     setThumbnail(null);
     setThumbnail(selected);
-    console.log("thumbnail updated");
   }
 
 

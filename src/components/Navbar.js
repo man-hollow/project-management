@@ -12,7 +12,7 @@ export default function Navbar() {
         <ul>
           <li className='logo'>
             <i className='fa fa-home img' style={{fontSize:'40px'}}></i>
-            <span>Selva's</span>
+            <span>Mr-Hollowman's</span>
           </li>
 
           {!user && (<><li><Link to='/login'>Login</Link></li>

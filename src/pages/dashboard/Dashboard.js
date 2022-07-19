@@ -38,7 +38,6 @@ export default function Dashboard() {
     }
   }) : null;
 
-
   return (
     <div>
       <h2 className='page-titile'>Dashboard</h2>

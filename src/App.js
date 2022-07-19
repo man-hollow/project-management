@@ -35,7 +35,7 @@ export default function App() {
               {!user && <Login />}
             </Route>
             <Route path='/signup'>
-            {user && <Redirect to='/'/>}
+              {user && <Redirect to='/'/>}
               {!user && <Signup />}
             </Route>
             <Route path="/projects/:id">
