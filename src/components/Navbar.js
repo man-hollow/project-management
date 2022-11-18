@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 
-export default function Navbar() {
+export default function Navbar({isSideBarShow, setIsSideBarShow}) {
   const {logout, isPending}=useLogout();
   const {user}=useAuthContext();
   return (
@@ -18,10 +18,11 @@ export default function Navbar() {
           {!user && (<><li><Link to='/login'>Login</Link></li>
           <li><Link to='/signup'>Signup</Link></li></>)}
 
-         { user && <li>
+         {/* { user && <li>
             { !isPending && <button className='btn' onClick={logout}>Logout</button>}
             { isPending && <button className='btn' disabled >Loging out...</button>}
-          </li>}
+          </li>} */}
+          {!isSideBarShow && <i class="fa fa-bars" aria-hidden="true" onClick={()=>setIsSideBarShow(true)}></i>}
         </ul>
     </div>
   )

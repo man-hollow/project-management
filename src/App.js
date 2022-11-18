@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 import {BrowserRouter as Router,Route, Switch, Redirect} from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
@@ -14,13 +14,14 @@ import OnlineUsers from './components/OnlineUsers';
 
 export default function App() {
   const {user, authIsReady} = useAuthContext()
+  const [isSideBarShow,setIsSideBarShow] = useState(false)
   return (
     <div className='App'>
       {authIsReady && (
       <Router>
         {user && <Sidebar />}
         <div className='container'>
-          <Navbar />
+          <Navbar isSideBarShow={isSideBarShow} setIsSideBarShow={setIsSideBarShow} />
           <Switch>
             <Route exact path='/'>
               {!user && <Redirect to='/login'/> }
@@ -44,7 +45,12 @@ export default function App() {
               </Route>
           </Switch>
         </div>
-        {user && <OnlineUsers />}
+        {user && isSideBarShow && <div className='user-list'>
+        <i class="fa fa-times" aria-hidden="true" onClick={()=>setIsSideBarShow(false)}></i>
+          <ul>
+            <li>users</li>
+          </ul>
+          </div>}
       </Router>
       )}
     </div>
