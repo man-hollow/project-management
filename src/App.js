@@ -58,9 +58,9 @@ export default function App() {
         {user && isSideBarShow && <div className='user-list'>
         <i class="fa fa-times" aria-hidden="true" onClick={()=>setIsSideBarShow(false)}></i>
           <ul>
-            <li>users</li>
+            
             <li>{ user && <li>
-            { !isPending && <button className='btn' onClick={()=>setShowLogout(true)}>Logout</button>}
+            { !isPending && <button className='btn logOutLay' onClick={()=>setShowLogout(true)}>Logout</button>}
             { isPending && <button className='btn' disabled >Loging out...</button>}
           </li>} </li>
               <li><Dropdown/></li>
