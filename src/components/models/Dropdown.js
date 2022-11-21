@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {FaChevronDown} from 'react-icons/fa'
 import './Dropdown.css';
 
 const Dropdown = () => {
@@ -12,7 +11,7 @@ const Dropdown = () => {
   return (
     <div className="dropdown">
       <div className='back-Drop-Down'>
-      <i class="fa fa-chevron-down" onMouseOver={handleOpen} onMouseOut={handleOpen} aria-hidden="true"></i>
+      <i class="fa fa-chevron-down" onMouseOver={handleOpen}  aria-hidden="true"></i>
       </div>
       {open ? (
         <ul className="menu">
