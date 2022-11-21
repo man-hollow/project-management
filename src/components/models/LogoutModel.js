@@ -1,4 +1,5 @@
 import React from 'react';
+import "./LogoutModel.css"
 
 const LogoutModel = ({ setShowLogout, logout}) => {
     const handleLogout=()=>{
@@ -7,9 +8,10 @@ const LogoutModel = ({ setShowLogout, logout}) => {
     }
     return (
         <div className='logout-model'>
-            <h1>Are you sure want to logOut</h1>
-            <button onClick={()=>handleLogout()}>yes</button>
-            <button onClick={()=>setShowLogout(false)}>no</button>
+            <i class="fa-light fa-triangle-exclamation"></i>
+            <h1 className='LogOut'>Are you sure want to logOut</h1>
+            <button className='Btn-yes' onClick={()=>handleLogout()}>yes</button>   
+            <button className='Btn-no' onClick={()=>setShowLogout(false)}>no</button>
         </div>
     );
 }

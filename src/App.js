@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import OnlineUsers from './components/OnlineUsers';
 import LogoutModel from './components/models/LogoutModel';
+import Dropdown from './components/models/Dropdown';
 
 export default function App() {
   const {user, authIsReady} = useAuthContext()
@@ -62,9 +63,11 @@ export default function App() {
             { !isPending && <button className='btn' onClick={()=>setShowLogout(true)}>Logout</button>}
             { isPending && <button className='btn' disabled >Loging out...</button>}
           </li>} </li>
+              <li><Dropdown/></li>
             {/* <li><OnlineUsers/></li> */}
           </ul>
           </div>}
+          
       </Router>
       )}
     </div>
