@@ -21,9 +21,6 @@ export default function App() {
   const [showLogout,setShowLogout] = useState(false)
   const {logout, isPending}=useLogout();
 
-  const confirmLogout=()=>{
-    
-  }
   return (
     <div className='App'>
       {authIsReady && (

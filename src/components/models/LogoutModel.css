@@ -9,10 +9,6 @@
     opacity: 20%;
 } */
 
-:root {
-    --glow-color: rgb(54, 50, 63);
-  }
-
 .logout-model {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -30,15 +26,11 @@
       justify-content: center;
       align-items: center;   
       padding: 0.35em 3em;
-      border: 0.15em solid var(--glow-color);
+      border: 0.15em solid rgb(54, 50, 63);
       border-radius: 0.45em;
-      
-      -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-          0px 0px 0.5em 0px var(--glow-color);
-      -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-          0px 0px 0.5em 0px var(--glow-color);
-      box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-          0px 0px 0.5em 0px var(--glow-color);
+
+      box-shadow: inset 0px 0px 0.5em 0px rgb(54, 50, 63),
+          0px 0px 0.5em 0px rgb(54, 50, 63);
       animation: border-flicker 2s linear infinite;
   }
   .LogOut { 
@@ -47,18 +39,14 @@
     margin-top: 13px;
     }
   .Btn-yes ,.Btn-no { 
-    color: var(--glow-color);
+    color: rgb(54, 50, 63);
     cursor: pointer;
     padding: 0.35em 1em;
-    border: 0.15em solid var(--glow-color);
+    border: 0.15em solid rgb(54, 50, 63);
     border-radius: 0.45em;
     background: none;
-    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-        0px 0px 0.5em 0px var(--glow-color);
-    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-        0px 0px 0.5em 0px var(--glow-color);
-    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-        0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px rgb(54, 50, 63),
+        0px 0px 0.5em 0px rgb(54, 50, 63);
     animation: border-flicker 2s linear infinite;
     }
   .Btn-no { grid-area: Btn-no; }
