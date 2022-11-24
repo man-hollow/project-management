@@ -5,3 +5,11 @@
     flex-grow: 1;
     padding: 0 60px;
 }
+.App .user-list{
+    position:absolute; 
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index:1;
+
+}
