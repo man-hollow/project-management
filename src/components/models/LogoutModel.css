@@ -1,0 +1,53 @@
+/* .logout-model{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: aliceblue;
+    color: rgb(103, 4, 4);
+    text-align: center;
+    margin-left: 300px;
+    padding: 25px;
+    opacity: 20%;
+} */
+
+.logout-model {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 40px 50px; 
+    padding: 20px;
+    margin-left: 400px;
+    
+    background-color: aliceblue;
+    border-radius: 10px;
+    grid-template-areas: 
+      "LogOut LogOut"
+      "Btn-yes Btn-no"; 
+      text-align: center;
+      justify-content: center;
+      align-items: center;   
+      padding: 0.35em 3em;
+      border: 0.15em solid rgb(54, 50, 63);
+      border-radius: 0.45em;
+
+      box-shadow: inset 0px 0px 0.5em 0px rgb(54, 50, 63),
+          0px 0px 0.5em 0px rgb(54, 50, 63);
+      animation: border-flicker 2s linear infinite;
+  }
+  .LogOut { 
+    grid-area: LogOut; 
+    font-size: 25px;
+    margin-top: 13px;
+    }
+  .Btn-yes ,.Btn-no { 
+    color: rgb(54, 50, 63);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid rgb(54, 50, 63);
+    border-radius: 0.45em;
+    background: none;
+    box-shadow: inset 0px 0px 0.5em 0px rgb(54, 50, 63),
+        0px 0px 0.5em 0px rgb(54, 50, 63);
+    animation: border-flicker 2s linear infinite;
+    }
+  .Btn-no { grid-area: Btn-no; }
+  .Btn-yes { grid-area: Btn-yes; }
